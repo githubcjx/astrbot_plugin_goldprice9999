@@ -1,0 +1,5 @@
+name: astrbot_plugin_goldprice
+desc: 输入触发指令查询黄金9999（Au99.99）实时金价并返回到群聊
+version: 1.0.0
+author: githubcjx
+repo: "https://github.com/githubcjx/astrbot_plugin_goldprice"

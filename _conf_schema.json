@@ -1,0 +1,12 @@
+{
+  "trigger_prefix": {
+    "description": "触发指令（精确匹配）。群成员发送此内容即查询金价，默认 /金价",
+    "type": "string",
+    "default": "/金价"
+  },
+  "enabled_groups": {
+    "description": "生效的群聊ID列表。留空表示在所有群聊生效；填写后仅在列表内的群聊响应。私聊始终生效。",
+    "type": "list",
+    "default": []
+  }
+}
