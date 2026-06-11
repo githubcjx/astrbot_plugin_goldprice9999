@@ -315,9 +315,13 @@ class GoldPricePlugin(Star):
             logger.exception("[goldprice] Blowfish 自检异常")
 
     def _matched(self, event: AstrMessageEvent) -> bool:
-        trigger = (self.config.get("trigger_prefix", "/金价") or "/金价").strip()
+        triggers = [
+            str(t).strip()
+            for t in (self.config.get("triggers", ["/金价"]) or [])
+            if str(t).strip()
+        ] or ["/金价"]
         text = (event.message_str or "").strip()
-        if text != trigger:
+        if text not in triggers:
             return False
         group_id = event.get_group_id()
         if group_id:  # 群聊：检查白名单
