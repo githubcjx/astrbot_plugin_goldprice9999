@@ -290,7 +290,7 @@ def format_quote(q: dict) -> str:
 # 插件主体
 # ---------------------------------------------------------------------------
 @register(
-    "astrbot_plugin_goldprice",
+    "astrbot_plugin_goldprice9999",
     "githubcjx",
     "查询黄金9999（Au99.99）实时金价并返回群聊，支持自定义触发指令与生效群聊",
     "1.0.0",
@@ -317,9 +317,9 @@ class GoldPricePlugin(Star):
     def _matched(self, event: AstrMessageEvent) -> bool:
         triggers = [
             str(t).strip()
-            for t in (self.config.get("triggers", ["/金价"]) or [])
+            for t in (self.config.get("triggers", ["金价", "gold"]) or [])
             if str(t).strip()
-        ] or ["/金价"]
+        ] or ["金价", "gold"]
         text = (event.message_str or "").strip()
         if text not in triggers:
             return False

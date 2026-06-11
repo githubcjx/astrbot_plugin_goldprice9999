@@ -2,7 +2,7 @@
   "triggers": {
     "description": "触发指令列表（精确匹配，可配置多个）。群成员发送其中任意一个即查询金价，例如：金价、gold",
     "type": "list",
-    "default": ["/金价"]
+    "default": ["金价", "gold"]
   },
   "enabled_groups": {
     "description": "生效的群聊ID列表。留空表示在所有群聊生效；填写后仅在列表内的群聊响应。私聊始终生效。",
